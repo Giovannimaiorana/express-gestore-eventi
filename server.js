@@ -15,7 +15,7 @@ app.get("/", (req, res) => {
 });
 
 //rotta x prenotation router
-app.use("/event", prenotationRouter);
+app.use("/events", prenotationRouter);
 
 app.use(errorMiddle);
 app.use(errorPage);

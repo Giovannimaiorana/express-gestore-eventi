@@ -37,7 +37,9 @@ function store(req, res) {
                 req.body.title,
                 req.body.description,
                 req.body.date,
-                req.body.maxSeats
+                req.body.maxSeats,
+                req.body.slug
+
             );
             eventModel.saveEvent(newEvent, (err, eventoSalvato) => {
                 if (err) {
@@ -66,10 +68,30 @@ function show(req, res) {
         res.json(event);
     });
 }
+function put(req, res) {
+    const eventSlug = req.params.slug;
+    console.log(eventSlug);
+    const updatedData = {
+        title: req.body.title,
+        description: req.body.description,
+        maxSeats: req.body.maxSeats,
+    };
+    eventModel.updateEvent(eventSlug, updatedData, (err, updatedEvent) => {
+        if (err) {
+            if (err.message === 'Evento non trovato') {
+                return res.status(404).json({ error: 'Evento non trovato' });
+            }
+            return res.status(500).json({ error: 'Errore nell\'aggiornamento dell\'evento' });
+        }
 
+        res.json(updatedEvent);
+    });
+
+}
 
 module.exports = {
     index,
     store,
     show,
+    put,
 };
