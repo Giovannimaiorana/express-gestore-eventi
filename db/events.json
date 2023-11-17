@@ -1,0 +1,16 @@
+[
+  {
+    "id": "1",
+    "title": "TestSalvataggio",
+    "description": "se funziona sono felice",
+    "date": "120319",
+    "maxSeats": "5"
+  },
+  {
+    "id": 2,
+    "title": "TestSalvataggio",
+    "description": "se funziona sono felice",
+    "date": "120319",
+    "maxSeats": "5"
+  }
+]
