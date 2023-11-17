@@ -3,15 +3,27 @@ const path = require('path');
 const eventModel = require("../models/eventModel");
 
 function index(req, res) {
-    res.format({
-        html: () => {
-            res.send("index");
-        },
-        default: () => {
-            res.status(406).send("Not Acceptable");
+    const { title, description } = req.query;
+
+    eventModel.getAllEvents((err, events) => {
+        if (err) {
+            console.error('Errore nella lettura degli eventi:', err);
+            return res.status(500).json({ error: 'Errore nella lettura degli eventi' });
         }
+
+        if (title) {
+            events = events.filter((event) => event.title.toLowerCase().includes(title.toLowerCase()));
+        }
+
+        if (description) {
+            events = events.filter((event) => event.description.toLowerCase().includes(description.toLowerCase()));
+        }
+
+        res.json(events);
     });
 }
+
+
 
 function store(req, res) {
     res.format({
@@ -37,8 +49,27 @@ function store(req, res) {
         }
     });
 }
+function show(req, res) {
+    const eventId = parseInt(req.params.id);
+    //console.log(eventId);
+
+    eventModel.getAllEvents((err, allEvents) => {
+        if (err) {
+            return res.status(500).json({ error: 'Errore nella lettura degli eventi' });
+        }
+
+        const event = allEvents.find((e) => e.id === eventId);
+        if (!event) {
+            return res.status(404).json({ error: 'Evento non trovato' });
+        }
+
+        res.json(event);
+    });
+}
+
 
 module.exports = {
     index,
     store,
+    show,
 };

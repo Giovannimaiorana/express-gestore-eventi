@@ -7,6 +7,8 @@ const eventController = require("../controllers/eventsController");
 router.get('/', eventController.index);
 //rotta post store
 router.post('/', multer().none(), eventController.store);
+//rotta per show
+router.get("/:id", eventController.show);
 //rotta put update
 router.put('/put', (req, res) => {
     res.send("metodo put")

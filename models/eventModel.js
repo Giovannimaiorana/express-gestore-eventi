@@ -19,7 +19,7 @@ class Event {
             }
 
             try {
-                // Aggiungi una verifica per assicurarti che la stringa non sia vuota
+
                 const parsedData = data.trim() ? JSON.parse(data) : [];
                 callback(null, parsedData);
             } catch (parseError) {
@@ -48,6 +48,17 @@ class Event {
             });
         });
     }
+    static getAllEvents(callback) {
+        Event.readEvent((err, eventi) => {
+            if (err) {
+                console.error('Errore nella lettura degli eventi:', err);
+                return callback(err, null);
+            }
+
+            callback(null, eventi);
+        });
+    }
+
 }
 
 module.exports = Event;
