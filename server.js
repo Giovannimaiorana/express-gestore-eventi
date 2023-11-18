@@ -2,6 +2,7 @@ const express = require("express");
 const dotenv = require("dotenv");
 dotenv.config();
 const prenotationRouter = require("./routers/eventRouter");
+const reservationRouter = require("./routers/reservation");
 const errorMiddle = require("./middlewares/error");
 const errorPage = require("./middlewares/routeNotFound");
 
@@ -16,6 +17,7 @@ app.get("/", (req, res) => {
 
 //rotta x prenotation router
 app.use("/events", prenotationRouter);
+app.use("/reservation", reservationRouter);
 
 app.use(errorMiddle);
 app.use(errorPage);

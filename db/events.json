@@ -1,34 +1,34 @@
 [
   {
     "id": 1,
-    "title": "nuovo update",
-    "description": "se funziona sono felice",
-    "date": "2023-11-17T15:06:30.332Z",
-    "maxSeats": "5",
-    "slug": "nuovo-update"
+    "title": "evento 1",
+    "description": "questo è l'evento uno ",
+    "date": "2023-11-18T21:23:11.960Z",
+    "maxSeats": "ci saranno 50 posti",
+    "slug": "evento-1"
   },
   {
     "id": 2,
-    "title": "TestSalvataggio",
-    "description": "se funziona sono felice",
-    "date": "2023-11-17T15:06:35.693Z",
-    "maxSeats": "5",
-    "slug": "test-salva"
+    "title": "evento 2",
+    "description": "questo è l'evento due ",
+    "date": "2023-11-18T21:23:37.640Z",
+    "maxSeats": "ci saranno 30 posti",
+    "slug": "evento-2"
   },
   {
     "id": 3,
-    "title": "TestSalvataggio",
-    "description": "se funziona sono felice",
-    "date": "2023-11-17T15:06:36.371Z",
-    "maxSeats": "5",
-    "slug": "test-salvatd"
+    "title": "evento3",
+    "description": "questo è l'evento tre",
+    "date": "2023-11-18T21:23:58.797Z",
+    "maxSeats": "ci saranno 35 posti",
+    "slug": "evento-3"
   },
   {
     "id": 4,
-    "title": "TestSalvataggio",
-    "description": "se funziona sono felice",
-    "date": "2023-11-17T15:06:37.694Z",
-    "maxSeats": "5",
-    "slug": "test-salio"
+    "title": "evento4",
+    "description": "questo è l'evento quattro",
+    "date": "2023-11-18T21:24:29.374Z",
+    "maxSeats": "80",
+    "slug": "evento-4"
   }
 ]
